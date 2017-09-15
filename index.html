@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="A curated collection of interesting machine learning projects">
+        <meta name="keywords" content="ml, machine learning, open source, ai, artificial intelligence, neural networks, CNN, CUDA">
+        <meta name="author" content="ideacheck.io">
+
+        <title>ML-Showcase | A curated collection of interesting machine learning projects</title>
+
+        <!--  favicon -->
+        <link rel="shortcut icon" href="assets/img/ico/favicon.png">
+        <!--  apple-touch-icon -->
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/img/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/img/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/img/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/img/ico/apple-touch-icon-57-precomposed.png">
+
+        <link href='https://fonts.googleapis.com/css?family=Raleway:400,300,500,700,900' rel='stylesheet' type='text/css'>
+        <!-- Material+Icons CSS -->
+        <link href="assets/fonts/iconfont/material-icons.css" rel="stylesheet">
+        <!-- FontAwesome CSS -->
+        <link href="assets/fonts/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+        <!-- magnific-popup -->
+        <link href="assets/magnific-popup/magnific-popup.css" rel="stylesheet">
+        <!-- flexslider -->
+        <link href="assets/flexSlider/flexslider.css" rel="stylesheet">
+        <!-- materialize -->
+        <link href="assets/materialize/css/materialize.min.css" rel="stylesheet">
+        <!-- Bootstrap -->
+        <link href="assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <!-- shortcodes -->
+        <link href="assets/css/shortcodes/shortcodes.css" rel="stylesheet">
+        <!-- Style CSS -->
+        <link href="style.css" rel="stylesheet">
+
+        <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body id="top" class="has-header-search">
+
+
+        <!--header start-->
+        <header id="header" class="tt-nav nav-border-bottom">
+
+            <div class="header-sticky light-header ">
+
+                <div class="container">
+
+                    <div class="search-wrapper">
+                        <div class="search-trigger pull-right">
+                              <div class='search-btn' ></div>
+                            	<i class="material-icons showhide onlyonmobile">&#xE145;</i>
+                        </div>
+
+                        <!-- Modal Search Form -->
+                        <i id="close-search" class="search-close material-icons">&#xE5CD;</i>
+                        <div class="search-form-wrapper">
+                            <form id="add-form" action="#" class="white-form">
+                                <div class="input-field">
+                                    <input type="text" name="search" id="search">
+                                    <label for="search" class="">Enter Project URL...</label>
+                                </div>
+                                <button class="btn pink search-button waves-effect waves-light" type="submit"><i class="material-icons">&#xE163;</i></button>
+                                
+                            </form>
+                        </div>
+                    </div><!-- /.search-wrapper -->
+
+                    <div id="materialize-menu" class="menuzord">
+
+                        <!--logo start-->
+                        <a href="/" class="logo-brand">
+                            <img class="retina" src="assets/img/logo.png" alt=""/>
+                        </a>
+                        <!--logo end-->
+
+                        <!--mega menu start-->
+                        <ul class="menuzord-menu pull-right">
+
+                            <li><a href="#" class="add-project">Suggest a Project</a>
+
+                            </li>
+
+                        </ul>
+                        <!--mega menu end-->
+
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!--header end-->
+
+
+				<section id="newsletter-signup" class="brand-bg">
+				
+					<div class="row">
+						
+										<div class="col-md-12 mt-40 text-center below-header">
+			                  <h2 class="font-30 white-text text-extrabold text-uppercase">New ML projects in your inbox</h2>
+			                  
+			                  <p class="white-text width-60">Get a weekly digest of newly added open source ML projects. Nothing else, robo-swear!</p>
+				
+			              </div>
+              
+		                <div class="col-md-6 col-md-offset-3 mb-10 mlr">
+		                  <div class="subscribe-wrapper text-center">
+                          <form id="signup-form" class="subscribe-form mailchimp white-form" method="post" novalidate="true">
+
+                              <div class="input-field">
+                                <label class="sr-only" for="email">Email</label>
+                                <input id="subscribeEmail" type="email" name="email" class="validate">
+
+                                <!-- to showing error message -->
+                                <label for="subscribeEmail" data-error="wrong" data-success="right" class="">Enter your email</label>
+                              </div>
+
+                              <button type="submit" class="btn btn-lg pink waves-effect waves-light mt-30 text-capitalize">Subscribe Now</button>
+
+                              <!-- to showing success messages -->
+                              <p class="subscription-success text-center grey-text"></p>
+                          </form>
+                      </div><!-- /.subscribe-wrapper -->
+                    </div><!-- /.col-md-6 -->
+          </div>
+				
+				</section>
+
+
+        <section class="mt-80 mb-80">
+            <div class="container">
+
+
+							<div id="success-add" class="row" style="display: none;">
+								<div class="col-md-12">
+										<div class="alert alert-box success-box" role="alert" style="width: 100%;">
+	
+	                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	
+	                      <div class="icon-wrap">
+	                        <i class="fa fa-lg fa-thumbs-o-up"></i>
+	                      </div><!-- /.icon-wrap -->
+	
+	                      <div class="info-wrap">
+	                        <strong>Thanks for your suggestion</strong>
+	                        <span>Thank you! We'll review your suggestion and add it to our directory as soon as possible!</span>
+	                      </div><!-- /.info-wrap -->
+	                  </div>
+	              </div>
+              </div>
+              
+							<div id="success-signup" class="row" style="display: none;">
+								<div class="col-md-12">
+										<div class="alert alert-box success-box" role="alert" style="width: 100%;">
+	
+	                      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	
+	                      <div class="icon-wrap">
+	                        <i class="fa fa-lg fa-thumbs-o-up"></i>
+	                      </div><!-- /.icon-wrap -->
+	
+	                      <div class="info-wrap">
+	                        <strong>Thanks for signing up!</strong>
+	                        <span>Thank you! You'll soon receive newly added ML projects in your inbox!</span>
+	                      </div><!-- /.info-wrap -->
+	                  </div>
+	              </div>
+              </div>              
+                  
+              <div class="text-center mb-50">
+                  <h2 class="section-title">Awesome Machine Learning Projects</h2>
+                  <p class="section-sub">A curated list of open-source machine learning projects from around the web. Filter by categories, try out demos, and explore the project's source code on Github</p>
+              </div>
+
+              <div class="portfolio-container text-center">
+                  <ul class="portfolio-filter brand-filter">
+                      <li class="active waves-effect waves-light" data-group="all">All</li>
+                      <li class=" waves-effect waves-light" data-group="1">Natural Language</li>
+                      <li class=" waves-effect waves-light" data-group="2">Image</li>
+                      <li class=" waves-effect waves-light" data-group="3">Audio</li>
+                      <li class=" waves-effect waves-light" data-group="4">Video</li>
+                  </ul>
+
+                  <div class="portfolio portfolio-with-title col-3 gutter mtb-50">
+
+											    <div class="portfolio-item" data-groups='["all", "1","2"]'>
+                          <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay brand-overlay"></div>
+                                
+                                <div class="portfolio-slider" data-direction="horizontal">
+	                  <ul class="slides">
+	                      <li>
+	                          <a href="https://github.com/abhshkdz/neural-vqa" target="_blank" title="Visual Question Answering">
+	                            <img src="assets/img/portfolio/portfolio-12.png" alt="Visual Question Answering">
+	                          </a>
+	                      </li><li>
+	                          <a href="https://github.com/abhshkdz/neural-vqa" target="_blank" title="Visual Question Answering">
+	                            <img src="assets/img/portfolio/portfolio-12a.png" alt="Visual Question Answering">
+	                          </a>
+	                      </li>
+	                  </ul>
+	              </div>
+                                
+                                <div class="portfolio-intro">
+                                  <div class="action-btn">
+                                    <a href="https://github.com/abhshkdz/neural-vqa" title="Visual Question Answering" target="_blank"> <i class="fa fa-link"></i></a>
+                                  </div>
+
+                                  <p><a href="https://github.com/abhshkdz/neural-vqa" target="_blank">Given an image and a free-form question, the NN can answer the question</a></p>
+                                </div>
+                            </div><!-- thumb -->
+
+                            <div class="portfolio-title">
+                                <h2><a href="https://github.com/abhshkdz/neural-vqa" target="_blank">Visual Question Answering</a></h2>
+                                <p><a href="https://github.com/abhshkdz/neural-vqa" target="_blank">Answering questions based on images</a> </p>
+                            </div>
+
+                          </div><!-- /.portfolio-wrapper -->
+                      </div><!-- /.portfolio-item -->    <div class="portfolio-item" data-groups='["all", "1"]'>
+                          <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay brand-overlay"></div>
+                                
+                                <img src="assets/img/portfolio/portfolio-11.png" alt="Generating New Words">
+                                
+                                <div class="portfolio-intro">
+                                  <div class="action-btn">
+                                    <a href="https://github.com/shariq/burgundy" title="Generating New Words" target="_blank"> <i class="fa fa-link"></i></a>
+                                  </div>
+
+                                  <p><a href="https://github.com/shariq/burgundy" target="_blank">An RNN that creates new words after being trained on a short wordlist</a></p>
+                                </div>
+                            </div><!-- thumb -->
+
+                            <div class="portfolio-title">
+                                <h2><a href="https://github.com/shariq/burgundy" target="_blank">Generating New Words</a></h2>
+                                <p><a href="https://github.com/shariq/burgundy" target="_blank">Word generator using RNNs</a> </p>
+                            </div>
+
+                          </div><!-- /.portfolio-wrapper -->
+                      </div><!-- /.portfolio-item -->    <div class="portfolio-item" data-groups='["all", "2"]'>
+                          <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay brand-overlay"></div>
+                                
+                                <div class="portfolio-slider" data-direction="horizontal">
+	                  <ul class="slides">
+	                      <li>
+	                          <a href="https://github.com/jcjohnson/neural-style" target="_blank" title="Artistic Style Transfer">
+	                            <img src="assets/img/portfolio/portfolio-10.png" alt="Artistic Style Transfer">
+	                          </a>
+	                      </li><li>
+	                          <a href="https://github.com/jcjohnson/neural-style" target="_blank" title="Artistic Style Transfer">
+	                            <img src="assets/img/portfolio/portfolio-10a.png" alt="Artistic Style Transfer">
+	                          </a>
+	                      </li>
+	                  </ul>
+	              </div>
+                                
+                                <div class="portfolio-intro">
+                                  <div class="action-btn">
+                                    <a href="https://github.com/jcjohnson/neural-style" title="Artistic Style Transfer" target="_blank"> <i class="fa fa-link"></i></a>
+                                  </div>
+
+                                  <p><a href="https://github.com/jcjohnson/neural-style" target="_blank">An algorithm for combining the content of one image with the style of another image using convolutional neural networks</a></p>
+                                </div>
+                            </div><!-- thumb -->
+
+                            <div class="portfolio-title">
+                                <h2><a href="https://github.com/jcjohnson/neural-style" target="_blank">Artistic Style Transfer</a></h2>
+                                <p><a href="https://github.com/jcjohnson/neural-style" target="_blank">Applying the style of an artwork to a photo</a> </p>
+                            </div>
+
+                          </div><!-- /.portfolio-wrapper -->
+                      </div><!-- /.portfolio-item -->    <div class="portfolio-item" data-groups='["all", "3"]'>
+                          <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay brand-overlay"></div>
+                                
+                                <img src="assets/img/portfolio/portfolio-9.png" alt="Predicting Cardiac Abnormalities">
+                                
+                                <div class="portfolio-intro">
+                                  <div class="action-btn">
+                                    <a href="https://github.com/jisaacso/DeepHeart" title="Predicting Cardiac Abnormalities" target="_blank"> <i class="fa fa-link"></i></a>
+                                  </div>
+
+                                  <p><a href="https://github.com/jisaacso/DeepHeart" target="_blank">Predicting patient health from PCG audio data</a></p>
+                                </div>
+                            </div><!-- thumb -->
+
+                            <div class="portfolio-title">
+                                <h2><a href="https://github.com/jisaacso/DeepHeart" target="_blank">Predicting Cardiac Abnormalities</a></h2>
+                                <p><a href="https://github.com/jisaacso/DeepHeart" target="_blank">Using phonocardiogram (PCG) data</a> </p>
+                            </div>
+
+                          </div><!-- /.portfolio-wrapper -->
+                      </div><!-- /.portfolio-item -->    <div class="portfolio-item" data-groups='["all", "2"]'>
+                          <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay brand-overlay"></div>
+                                
+                                <div class="portfolio-slider" data-direction="horizontal">
+	                  <ul class="slides">
+	                      <li>
+	                          <a href="http://www.pinchofintelligence.com/photorealistic-neural-network-gameboy/" target="_blank" title="Creating Photorealistic Images">
+	                            <img src="assets/img/portfolio/portfolio-8.png" alt="Creating Photorealistic Images">
+	                          </a>
+	                      </li><li>
+	                          <a href="http://www.pinchofintelligence.com/photorealistic-neural-network-gameboy/" target="_blank" title="Creating Photorealistic Images">
+	                            <img src="assets/img/portfolio/portfolio-8a.png" alt="Creating Photorealistic Images">
+	                          </a>
+	                      </li>
+	                  </ul>
+	              </div>
+                                
+                                <div class="portfolio-intro">
+                                  <div class="action-btn">
+                                    <a href="http://www.pinchofintelligence.com/photorealistic-neural-network-gameboy/" title="Creating Photorealistic Images" target="_blank"> <i class="fa fa-link"></i></a>
+                                  </div>
+
+                                  <p><a href="http://www.pinchofintelligence.com/photorealistic-neural-network-gameboy/" target="_blank">Takes Gameboy camera images of faces and turns them into photorealistic images</a></p>
+                                </div>
+                            </div><!-- thumb -->
+
+                            <div class="portfolio-title">
+                                <h2><a href="http://www.pinchofintelligence.com/photorealistic-neural-network-gameboy/" target="_blank">Creating Photorealistic Images</a></h2>
+                                <p><a href="http://www.pinchofintelligence.com/photorealistic-neural-network-gameboy/" target="_blank">Improving images from a Gameboy Camera</a> </p>
+                            </div>
+
+                          </div><!-- /.portfolio-wrapper -->
+                      </div><!-- /.portfolio-item -->    <div class="portfolio-item" data-groups='["all", "1"]'>
+                          <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay brand-overlay"></div>
+                                
+                                <img src="assets/img/portfolio/portfolio-7.png" alt="Code Autocompletion">
+                                
+                                <div class="portfolio-intro">
+                                  <div class="action-btn">
+                                    <a href="https://github.com/kootenpv/neural_complete" title="Code Autocompletion" target="_blank"> <i class="fa fa-link"></i></a>
+                                  </div>
+
+                                  <p><a href="https://github.com/kootenpv/neural_complete" target="_blank">A neural network trained to help writing neural network code using autocomplete </a></p>
+                                </div>
+                            </div><!-- thumb -->
+
+                            <div class="portfolio-title">
+                                <h2><a href="https://github.com/kootenpv/neural_complete" target="_blank">Code Autocompletion</a></h2>
+                                <p><a href="https://github.com/kootenpv/neural_complete" target="_blank">NN that autocompletes NN code</a> </p>
+                            </div>
+
+                          </div><!-- /.portfolio-wrapper -->
+                      </div><!-- /.portfolio-item -->    <div class="portfolio-item" data-groups='["all", "2"]'>
+                          <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay brand-overlay"></div>
+                                
+                                <img src="assets/img/portfolio/portfolio-6.png" alt="Evaluating Handwritten Math">
+                                
+                                <div class="portfolio-intro">
+                                  <div class="action-btn">
+                                    <a href="http://www.willforfang.com/computer-vision/2016/4/9/artificial-intelligence-for-handwritten-mathematical-expression-evaluation" title="Evaluating Handwritten Math" target="_blank"> <i class="fa fa-link"></i></a>
+                                  </div>
+
+                                  <p><a href="http://www.willforfang.com/computer-vision/2016/4/9/artificial-intelligence-for-handwritten-mathematical-expression-evaluation" target="_blank">A NN that reads handwritten math expressions from a board and subsequently evaluates the expressions</a></p>
+                                </div>
+                            </div><!-- thumb -->
+
+                            <div class="portfolio-title">
+                                <h2><a href="http://www.willforfang.com/computer-vision/2016/4/9/artificial-intelligence-for-handwritten-mathematical-expression-evaluation" target="_blank">Evaluating Handwritten Math</a></h2>
+                                <p><a href="http://www.willforfang.com/computer-vision/2016/4/9/artificial-intelligence-for-handwritten-mathematical-expression-evaluation" target="_blank">Solving handwritten math expressions</a> </p>
+                            </div>
+
+                          </div><!-- /.portfolio-wrapper -->
+                      </div><!-- /.portfolio-item -->    <div class="portfolio-item" data-groups='["all", "2"]'>
+                          <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay brand-overlay"></div>
+                                
+                                <img src="assets/img/portfolio/portfolio-5.png" alt="Handwriting Generation">
+                                
+                                <div class="portfolio-intro">
+                                  <div class="action-btn">
+                                    <a href="http://www.cs.toronto.edu/~graves/handwriting.cgi?text=&style=..%2Fdata%2Ftrainset_diff_no_start_all_labels.nc%2C973%2B905&bias=0.15&samples=3" title="Handwriting Generation" target="_blank"> <i class="fa fa-link"></i></a>
+                                  </div>
+
+                                  <p><a href="http://www.cs.toronto.edu/~graves/handwriting.cgi?text=&style=..%2Fdata%2Ftrainset_diff_no_start_all_labels.nc%2C973%2B905&bias=0.15&samples=3" target="_blank">Type a message into a text box, and the network will try to write it out longhand</a></p>
+                                </div>
+                            </div><!-- thumb -->
+
+                            <div class="portfolio-title">
+                                <h2><a href="http://www.cs.toronto.edu/~graves/handwriting.cgi?text=&style=..%2Fdata%2Ftrainset_diff_no_start_all_labels.nc%2C973%2B905&bias=0.15&samples=3" target="_blank">Handwriting Generation</a></h2>
+                                <p><a href="http://www.cs.toronto.edu/~graves/handwriting.cgi?text=&style=..%2Fdata%2Ftrainset_diff_no_start_all_labels.nc%2C973%2B905&bias=0.15&samples=3" target="_blank">Generating handwritten text with RNNs</a> </p>
+                            </div>
+
+                          </div><!-- /.portfolio-wrapper -->
+                      </div><!-- /.portfolio-item -->    <div class="portfolio-item" data-groups='["all", "2"]'>
+                          <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay brand-overlay"></div>
+                                
+                                <div class="portfolio-slider" data-direction="horizontal">
+	                  <ul class="slides">
+	                      <li>
+	                          <a href="https://github.com/alexjc/neural-doodle" target="_blank" title="Neural Doodle">
+	                            <img src="assets/img/portfolio/portfolio-4.png" alt="Neural Doodle">
+	                          </a>
+	                      </li><li>
+	                          <a href="https://github.com/alexjc/neural-doodle" target="_blank" title="Neural Doodle">
+	                            <img src="assets/img/portfolio/portfolio-4a.png" alt="Neural Doodle">
+	                          </a>
+	                      </li>
+	                  </ul>
+	              </div>
+                                
+                                <div class="portfolio-intro">
+                                  <div class="action-btn">
+                                    <a href="https://github.com/alexjc/neural-doodle" title="Neural Doodle" target="_blank"> <i class="fa fa-link"></i></a>
+                                  </div>
+
+                                  <p><a href="https://github.com/alexjc/neural-doodle" target="_blank">Generate seamless textures from photos and transfer style from one image to another</a></p>
+                                </div>
+                            </div><!-- thumb -->
+
+                            <div class="portfolio-title">
+                                <h2><a href="https://github.com/alexjc/neural-doodle" target="_blank">Neural Doodle</a></h2>
+                                <p><a href="https://github.com/alexjc/neural-doodle" target="_blank">Turning two-bit doodles into fine artworks</a> </p>
+                            </div>
+
+                          </div><!-- /.portfolio-wrapper -->
+                      </div><!-- /.portfolio-item -->    <div class="portfolio-item" data-groups='["all", "3"]'>
+                          <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay brand-overlay"></div>
+                                
+                                <img src="assets/img/portfolio/portfolio-3.png" alt="Composing Music">
+                                
+                                <div class="portfolio-intro">
+                                  <div class="action-btn">
+                                    <a href="http://www.hexahedria.com/2015/08/03/composing-music-with-recurrent-neural-networks/" title="Composing Music" target="_blank"> <i class="fa fa-link"></i></a>
+                                  </div>
+
+                                  <p><a href="http://www.hexahedria.com/2015/08/03/composing-music-with-recurrent-neural-networks/" target="_blank">Training a probabilistic model of polyphonic music inspired by the structure of convolutional neural networks</a></p>
+                                </div>
+                            </div><!-- thumb -->
+
+                            <div class="portfolio-title">
+                                <h2><a href="http://www.hexahedria.com/2015/08/03/composing-music-with-recurrent-neural-networks/" target="_blank">Composing Music</a></h2>
+                                <p><a href="http://www.hexahedria.com/2015/08/03/composing-music-with-recurrent-neural-networks/" target="_blank">Composing Music With RNNs</a> </p>
+                            </div>
+
+                          </div><!-- /.portfolio-wrapper -->
+                      </div><!-- /.portfolio-item -->    <div class="portfolio-item" data-groups='["all", "1"]'>
+                          <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay brand-overlay"></div>
+                                
+                                <div class="portfolio-slider" data-direction="horizontal">
+	                  <ul class="slides">
+	                      <li>
+	                          <a href="https://github.com/vinhkhuc/MemN2N-babi-python" target="_blank" title="Answering Questions">
+	                            <img src="assets/img/portfolio/portfolio-2.png" alt="Answering Questions">
+	                          </a>
+	                      </li><li>
+	                          <a href="https://github.com/vinhkhuc/MemN2N-babi-python" target="_blank" title="Answering Questions">
+	                            <img src="assets/img/portfolio/portfolio-2a.png" alt="Answering Questions">
+	                          </a>
+	                      </li>
+	                  </ul>
+	              </div>
+                                
+                                <div class="portfolio-intro">
+                                  <div class="action-btn">
+                                    <a href="https://github.com/vinhkhuc/MemN2N-babi-python" title="Answering Questions" target="_blank"> <i class="fa fa-link"></i></a>
+                                  </div>
+
+                                  <p><a href="https://github.com/vinhkhuc/MemN2N-babi-python" target="_blank">Enter a story and a question that can be answered based on the story, and the ML algorithm will try to answer it</a></p>
+                                </div>
+                            </div><!-- thumb -->
+
+                            <div class="portfolio-title">
+                                <h2><a href="https://github.com/vinhkhuc/MemN2N-babi-python" target="_blank">Answering Questions</a></h2>
+                                <p><a href="https://github.com/vinhkhuc/MemN2N-babi-python" target="_blank">Answering questions based on a story</a> </p>
+                            </div>
+
+                          </div><!-- /.portfolio-wrapper -->
+                      </div><!-- /.portfolio-item -->    <div class="portfolio-item" data-groups='["all", "2"]'>
+                          <div class="portfolio-wrapper">
+
+                            <div class="thumb">
+                                <div class="bg-overlay brand-overlay"></div>
+                                
+                                <div class="portfolio-slider" data-direction="horizontal">
+	                  <ul class="slides">
+	                      <li>
+	                          <a href="https://github.com/AaronJackson/vrn" target="_blank" title="3D Face Reconstruction">
+	                            <img src="assets/img/portfolio/portfolio-1.png" alt="3D Face Reconstruction">
+	                          </a>
+	                      </li><li>
+	                          <a href="https://github.com/AaronJackson/vrn" target="_blank" title="3D Face Reconstruction">
+	                            <img src="assets/img/portfolio/portfolio-1a.png" alt="3D Face Reconstruction">
+	                          </a>
+	                      </li>
+	                  </ul>
+	              </div>
+                                
+                                <div class="portfolio-intro">
+                                  <div class="action-btn">
+                                    <a href="https://github.com/AaronJackson/vrn" title="3D Face Reconstruction" target="_blank"> <i class="fa fa-link"></i></a>
+                                  </div>
+
+                                  <p><a href="https://github.com/AaronJackson/vrn" target="_blank">Works with just a single 2D facial image, works for arbitrary facial poses and expressions, and can be used to reconstruct the whole 3D facial geometry</a></p>
+                                </div>
+                            </div><!-- thumb -->
+
+                            <div class="portfolio-title">
+                                <h2><a href="https://github.com/AaronJackson/vrn" target="_blank">3D Face Reconstruction</a></h2>
+                                <p><a href="https://github.com/AaronJackson/vrn" target="_blank">Turn a 2D profile image into a 3D model</a> </p>
+                            </div>
+
+                          </div><!-- /.portfolio-wrapper -->
+                      </div><!-- /.portfolio-item -->
+											
+                  </div><!-- /.portfolio -->
+
+                  <div class="load-more-button text-center add-project">
+                    <a class="waves-effect waves-light btn btn-large pink"> <i class="fa fa-plus left"></i> Suggest a Project</a>
+                  </div>
+
+              </div><!-- portfolio-container -->
+
+            </div><!-- /.container -->
+        </section>
+
+
+        <footer class="footer footer-four">
+            <div class="primary-footer brand-bg text-center">
+                <div class="container">
+
+                  <a href="#top" class="page-scroll btn-floating btn-large pink back-top waves-effect waves-light tt-animate btt" data-section="#top">
+                    <i class="material-icons">&#xE316;</i>
+                  </a>
+
+
+
+                  <div class="row">
+                    <div class="col-md-12">
+                          <div class="footer-logo">
+                            <img src="assets/img/logo-white.png" alt="">
+                          </div>
+
+                          <span class="copy-text">Copyright &copy; 20167 <a href="#">ML showcase</a> &nbsp; | &nbsp;  All Rights Reserved &nbsp; | &nbsp;  Created by <a href="https://www.ideacheck.io">IdeaCheck.io</a></span>
+                          <div class="footer-intro">
+                            <p>Highlighting awesome open source machine learning / AI projects</p>
+                          </div>
+                    </div><!-- /.col-md-12 -->
+                  </div><!-- /.row -->
+                </div><!-- /.container -->
+            </div><!-- /.primary-footer -->
+
+        </footer>
+
+
+        <!-- Preloader -->
+        <div id="preloader">
+          <div class="preloader-position"> 
+            <img src="assets/img/logo-colored.png" alt="logo" >
+            <div class="progress">
+              <div class="indeterminate"></div>
+            </div>
+          </div>
+        </div>
+        <!-- End Preloader -->
+        
+
+        <!-- jQuery -->
+        <script src="assets/js/jquery-2.1.3.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/materialize/js/materialize.min.js"></script>
+        <script src="assets/js/menuzord.js"></script>
+        <script src="assets/js/bootstrap-tabcollapse.min.js"></script>
+        <script src="assets/js/jquery.easing.min.js"></script>
+        <script src="assets/js/imagesloaded.js"></script>
+        <script src="assets/js/jquery.sticky.min.js"></script>
+        <script src="assets/js/smoothscroll.min.js"></script>
+        <script src="assets/js/jquery.stellar.min.js"></script>
+        <script src="assets/js/jquery.shuffle.min.js"></script>
+        <script src="assets/flexSlider/jquery.flexslider-min.js"></script>
+        <script src="assets/magnific-popup/jquery.magnific-popup.min.js"></script>
+        <script src="assets/js/scripts.js"></script>
+    </body>
+  
+</html>
