@@ -487,7 +487,7 @@ Version: 1.5
 				$('#signup-form').on('submit',(function(e) {
 						e.preventDefault();
 						$.ajax({
-							url: "http://www.greatbytes.org/mlshowcase/email_signup.php",
+							url: "https://www.ideacheck.io/mlshowcase/email_signup.php",
 							type: "POST",
 							data: new FormData(this),
 							contentType: false,
@@ -517,7 +517,7 @@ Version: 1.5
 				$('#add-form').on('submit',(function(e) {
 						e.preventDefault();
 						$.ajax({
-							url: "http://www.greatbytes.org/mlshowcase/suggest_project.php",
+							url: "https://www.ideacheck.io/mlshowcase/suggest_project.php",
 							type: "POST",
 							data: new FormData(this),
 							contentType: false,
