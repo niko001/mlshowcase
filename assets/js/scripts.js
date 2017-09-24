@@ -127,9 +127,9 @@ Version: 1.5
         
         
         /* === for onepage menu scroll === */
-        if( typeof smoothScroll == 'object'){
-            smoothScroll.init();
-        }
+        //if( typeof smoothScroll == 'object'){
+        //    smoothScroll.init();
+        //}
 
 
         /* === Full Screen Banner === */
